@@ -1,0 +1,51 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width:100%;
+    min-width:1210px;
+}
+.top-banner{
+    position:relative;
+}
+.big-top-banner{
+    height:400px;
+    background:url(../images/top2.jpg) no-repeat;
+    display:none;
+}
+.small-top-banner{
+    height:60px;
+    background:url(../images/top1.jpg) no-repeat;
+}
+.top-banner-fold,.down{
+    width:44px;
+    height:15px;
+    position:absolute;
+    top:10px;
+    right:10px;
+    cursor:pointer;
+    background:rgba(0,0,0,0.4);
+    line-height:15px;
+    text-indent:4px;
+    font-size:12px;
+    color:#fff;
+}
+.top-banner-fold:after{
+    content:"";
+    width:15px;
+    height:15px;
+    position:absolute;
+    top:0;
+    right:0;
+    background:url(../images/point.png) no-repeat 0 0;
+}
+.down:after{
+    content:"";
+    width:15px;
+    height:15px;
+    position:absolute;
+    top:0;
+    right:0;
+    background:url(../images/point.png) no-repeat 0 -15px;
+}

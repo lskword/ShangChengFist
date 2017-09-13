@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+}
+html,body{
+    width:100%;
+    min-width:1210px;
+}
+.nav-wrap{
+    height:40px;
+    background:#ee394b;
+    font-family:"Microsoft YaHei";
+}
+.nav-center{
+    width:1210px;
+    margin:0 auto;
+    height:40px;
+}
+.drop-box{
+    cursor:pointer;
+    position:relative;
+    float:left;
+    width:300px;
+    height:40px;
+    line-height:40px;
+    margin-right:30px;
+    background:url(../images/nav_red_bg.png) no-repeat;
+}
+.drop-box i{
+    width:15px;
+    height:13px;
+    background:url(../images/nav_meau_icon.png) no-repeat;
+    position:absolute;
+    top:12.5px;
+    left:14px;
+}
+.drop-box span{
+    color:#fff;
+    width:190px;
+    height:40px;
+    font-size:16px;
+    text-align:left;
+    position:absolute;
+    left:37px;
+}
+.drop-box b{
+    position:absolute;
+    top:18px;
+    right:14px;
+    width:0;
+    height:0;
+    border:6px solid transparent;
+}
+.drop-box b{
+    border-top:6px solid #fff;
+}
+.nav-box{
+    float:left;
+    width:860px;
+    height:40px;
+    list-style:none;
+}
+.nav-box li{
+    float:left;
+    height:37px;
+    text-align:center;
+    line-height:40px;
+    padding:0 25px;
+}
+.nav-box li:first-child{
+    border-bottom:3px solid #cc0e2b;
+    font-weight:bold;
+}
+.nav-box li:hover{
+    border-bottom:3px solid #cc0e2b;
+}
+.nav-box li a{
+    color:#fff;
+    text-decoration:none;
+}
+

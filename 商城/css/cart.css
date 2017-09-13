@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+
+#cart-table,#sums {
+	width: 1210px;
+	margin: auto;
+}
+#sums{
+	text-align:  right;
+}
+
+#cart-table>tbody>tr {
+	height: 40px;
+	text-align: center;
+	font-size: 15px;
+}
+
+#cart-table>tbody>tr>td {
+	border: 1px solid black;
+
+}
+#cart-table>tbody>tr>td>img{
+	width: 300px;
+	height: 100px;
+}
