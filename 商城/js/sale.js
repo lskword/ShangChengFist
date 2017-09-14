@@ -62,7 +62,7 @@ myajax.get('http://h6.duchengjiu.top/shop/api_goods.php?cat_id=62',
             modsalelist.innerHTML = "<center>后端程序员跑路了</center>";
             return;
         }
-        for (var k = 0; k < 4; k++) {
+        for (var k = 0; k < 5; k++) {
             var obj = data[k];
             modsalelist.innerHTML += `<li><div class="goodimg">
 <a href="../web/goods.html?goods_id=${obj.goods_id}">

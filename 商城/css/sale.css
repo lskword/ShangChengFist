@@ -62,7 +62,7 @@ html,body{
 .goods{
     width:100%;
     border:1px solid #e5e5e5;
-    height:292px;
+    height:170px;
     margin-bottom:10px;
     cursor:pointer;
 }
@@ -71,7 +71,7 @@ html,body{
     float:left;
 }
 .shoptitle{
-    margin:117px auto 0;
+    margin:100px auto 0;
     width: 240px;
     font-size: 24px;
     color: #333;
@@ -97,7 +97,7 @@ html,body{
 }
 .salepic img{
     width:580px;
-    height:290px;
+    height:170px;
 }
 .sale-box{
     width:340px;

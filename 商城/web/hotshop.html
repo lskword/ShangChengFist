@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="../css/header-search.css">
 	<link rel="stylesheet" href="../css/title-nav.css">
 	<link rel="stylesheet" href="../css/hotshop.css">
-	<link rel="stylesheet" href="../css/resettop.css">
 </head>
 
 <body>
@@ -18,12 +17,16 @@
 	<div id="title">
 		<dl>
 			<dd>欢迎来到爱奇艺商城</dd>
-			<dd><a href="login.html">请登录</a></dd>
+			<dd id='login'><a href='login.html'>请登录</a></dd>
+			<a href="../web/newaddress.html" class="address">
+				<dd id='username'></dd>
+			</a>
+			<dd id=eit><a href="javascript:localStorage.clear(); location.reload();">退出</a></dd>
 			<dd><a href="register.html">免费注册</a></dd>
 		</dl>
 		<ul>
 			<li><i class='cat'></i><a href="cart.html">购物车</a></li>
-			<li><i class='buyer'></i><a href="order.html">买家中心</a></li>
+			<li><i class='buyer'></i><a href="../web/order.html">买家中心</a></li>
 			<li><i class='collection'></i><a href="#">我的收藏</a></li>
 			<li><i class='seller'></i><a href="#">关注我们</a></li>
 			<li><a href="http://www.iqiyi.com/">爱奇艺首页</a></li>
@@ -84,7 +87,7 @@
 <script type="text/javascript" src="../js/header-banner.js"></script>
 <script type="text/javascript" src="../js/lunbofist.js"></script>
 <script type="text/javascript" src="../js/header-search.js"></script>
-<script type="text/javascript" src='../js/resettop.js'></script>
+
 <script type="text/javascript" src="../js/hotshop.js"></script>
 
 </html>

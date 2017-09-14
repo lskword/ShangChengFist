@@ -4,6 +4,10 @@ var oSubmit = document.querySelector('input[type=button]');
 var oPrompt = document.querySelector('#prompt');
 var oP = document.createElement('p');
 var oEit=document.querySelector('#eit');
+document.body.addEventListener('click',function () {
+
+},true)
+
 oSubmit.addEventListener('click', function(e) {
 	// body..
 oP.innerText='';
@@ -26,7 +30,6 @@ oP.innerText='';
 			'请输入账户密码':json.message;
 			oP.innerText = json.message;
 			oPrompt.appendChild(oP);
-
 		}
 	})
 });

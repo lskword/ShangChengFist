@@ -31,7 +31,7 @@ myajax.get('http://h6.duchengjiu.top/shop/api_cart.php', {token: localStorage.to
 												<td>${obj.goods_price}</td>
 												<td name="sum" class='lsk'>
 												${obj.goods_price * obj.goods_number}</td>
-												<td><input data-id="${obj.goods_id}" type="button" name="delete" value="删除" style='widght:40px;height:40px;color:red;'></td>
+												<td><input data-id="${obj.goods_id}" type="button" name="delete" value="删除"></td>
 											</tr>
 											`;
 											obj.goods_sum = obj.goods_price * obj.goods_number;
@@ -94,7 +94,7 @@ oTable.addEventListener('click', function(event){
 	event = event || window.event;
 	var target = event.target || event.srcElement;
 	if (target.name === 'delete') {
-		if (!confirm('主人，您确定不要我了吗？')) { //当你选择的是取消则不执行任何事情
+		if (!confirm('确认要删除吗')) { //当你选择的是取消则不执行任何事情
 			return;
 		}
 		//得到商品ID

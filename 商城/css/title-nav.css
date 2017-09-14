@@ -7,10 +7,8 @@ html,body{
     min-width:1210px;
 }
 .nav-wrap{
-    width: 100%;
     height:40px;
     background:#ee394b;
-    z-index: 1;
     font-family:"Microsoft YaHei";
 }
 .nav-center{
@@ -64,21 +62,20 @@ html,body{
 }
 .nav-box li{
     float:left;
+    height:37px;
     text-align:center;
-    line-height:37px;
+    line-height:40px;
     padding:0 25px;
 }
 .nav-box li:first-child{
-    border-bottom:3px solid black;
+    border-bottom:3px solid #cc0e2b;
     font-weight:bold;
-    z-index: 1;
 }
 .nav-box li:hover{
-    border-bottom:3px solid black;
-    background-color: #cc0e2b;
-    z-index: 1;
+    border-bottom:3px solid #cc0e2b;
 }
 .nav-box li a{
     color:#fff;
     text-decoration:none;
 }
+

@@ -6,13 +6,11 @@
 	<meta charset="utf-8">
 	<title>购物车</title>
 </head>
-
 <link rel="stylesheet" href="../css/header-title.css">
 <link rel="stylesheet" href="../css/header-banner.css">
 <link rel="stylesheet" href="../css/header-search.css">
 <link rel="stylesheet" href="../css/title-nav.css">
 <link rel="stylesheet" href="../css/cart.css">
-
 
 <body>
 	<!-- header-title -->
@@ -21,7 +19,7 @@
 			<dl>
 				<dd>欢迎来到爱奇艺商城</dd>
 				<dd id='login'><a href='login.html'>请登录</a></dd>
-				<a href="address.html" class="address">
+				<a href="newaddress.html" class="address">
 					<dd id='username'></dd>
 				</a>
 				<dd id=eit><a href="javascript:localStorage.clear(); location.reload();">退出</a></dd>
@@ -89,19 +87,17 @@
 		</table>
 		<div id='sums'>
 			小计：<span id="sum"></span>
-			<input type="button" id="clear-cart" value="清空购物车" style="height:30px;color:blue;">
-			<button type="button" name="button"style="height:30px;"><a href="checkout.html" style="color:red;" >立即购买</a></button>
+			<input type="button" id="clear-cart" value="清空购物车">
+			<a href="newaddress.html">结算</a>
 		</div>
 	</main>
+
 </body>
 <script type="text/javascript" src="../js/myajax.js"></script>
 <script type="text/javascript" src="../js/animate.js"></script>
 <script type="text/javascript" src="../js/header-banner.js"></script>
 <script type="text/javascript" src="../js/lunbofist.js"></script>
 <script type="text/javascript" src='../js/header-search.js'>
-</script>
-<script type="text/javascript">
-
 </script>
 <script type="text/javascript" src="../js/title-nav.js"></script>
 <script type="text/javascript" src='../js/cart.js'>
