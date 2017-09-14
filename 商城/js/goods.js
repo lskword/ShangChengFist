@@ -137,9 +137,9 @@ document.body.onclick = function(event) {
           alert('账户过期，请从新登陆');
           localStorage.username = '';
           location.reload();
-        }else if (json.code === 2) {
-						alert('主人，宝贝已经添加到购物车了！')
+        } else if (json.code === 2) {
+          alert('主人，宝贝已经添加到购物车了！')
         }
-});
+      });
   }
 };
