@@ -44,11 +44,14 @@
   width: 240px;
   height: 310px;
   float: left;
-  border: 1px solid #c6c6c6;
+  border: 1px solid #fff;
 }
-
+#hot-crent:hover{
+  border: 1px solid red;
+}
 #hot-crent:hover img{
-  transform: scale(1.3);
+  transform: scale(1.3) ;
+  transition: all 1.5s ease;
   /*border: 1px solid red;*/
 }
 #hot-crent>a>dl>dt,
@@ -63,6 +66,7 @@ background-size:100%;
   color: #333333;
   height: 50px;
   margin: 6px 0 0 13px;
+  line-height: 18px;
 
 }
 #hot-crent>a>dl>dd>i{

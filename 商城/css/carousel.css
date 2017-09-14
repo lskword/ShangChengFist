@@ -92,7 +92,7 @@ section {
 }
 .carousel .circles {
   position: absolute;
-  bottom: 0px;
+  bottom: 20px;
   width: 200px;
   height: 17px;
   left: 50%;

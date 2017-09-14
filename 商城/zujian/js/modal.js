@@ -15,15 +15,15 @@ Modal.prototype.bindEvent = function() {
     if (target.className === 'close' || target.className === 'modal') {
       this.hide();
     }
-  };
+  }
 
   this.oBtn.onclick = () => {
     this.show();
   }
-};
+}
 Modal.prototype.hide = function() {
     this.oModal.style.display = 'none';
-};
+}
 Modal.prototype.show = function() {
     this.oModal.style.display = "block";
-};
+}

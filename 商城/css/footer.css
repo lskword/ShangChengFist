@@ -8,10 +8,12 @@ body{
 }
 #footer{
     width:100%;
+    overflow: hidden;
     min-width:1210px;
 }
 .common-banner{
     width:1210px;
+    height: 100px;
     margin:40px auto;
 }
 .footerpic{
