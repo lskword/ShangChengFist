@@ -64,17 +64,19 @@ html,body{
 }
 .nav-box li{
     float:left;
-    height:37px;
     text-align:center;
-    line-height:40px;
+    line-height:37px;
     padding:0 25px;
 }
 .nav-box li:first-child{
-    border-bottom:3px solid #cc0e2b;
+    border-bottom:3px solid black;
     font-weight:bold;
+    z-index: 1;
 }
 .nav-box li:hover{
-    border-bottom:3px solid #cc0e2b;
+    border-bottom:3px solid black;
+    background-color: #cc0e2b;
+    z-index: 1;
 }
 .nav-box li a{
     color:#fff;

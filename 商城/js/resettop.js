@@ -14,13 +14,13 @@ window.onscroll=function(){
   var resetnum=
   document.documentElement.scrollTop||
   document.body.scrollTop;
-  if(resetnum>200){
+  if(resetnum>100){
     oSearchbox.style.position='fixed';
     oSearchbox.style.top=0+'px';
     oSearchbox.style.backgroundColor='#fff';
     oNavWrap.style.position='fixed';
     oNavWrap.style.top=85+'px';
-  }else if(resetnum<200){
+  }else if(resetnum<100){
     oSearchbox.style.position='';
     oSearchbox.style.top=0+'px';
     oSearchbox.style.backgroundColor='#fff';
