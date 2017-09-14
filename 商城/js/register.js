@@ -24,7 +24,6 @@ oSubmit.addEventListener('click', function() {
 								location.href='login.html';
 						},3000)
 					}
-
 		})
 	}else{
 		oPrompt.innerText = '';

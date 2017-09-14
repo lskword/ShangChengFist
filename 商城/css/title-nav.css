@@ -7,8 +7,10 @@ html,body{
     min-width:1210px;
 }
 .nav-wrap{
+    width: 100%;
     height:40px;
     background:#ee394b;
+    z-index: 1;
     font-family:"Microsoft YaHei";
 }
 .nav-center{
@@ -78,4 +80,3 @@ html,body{
     color:#fff;
     text-decoration:none;
 }
-
