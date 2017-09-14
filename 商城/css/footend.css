@@ -33,7 +33,7 @@ ul{
 .clearfix{
     width:100%;
     min-width:1210px;
-    text-align:center;
+    /*text-align:center;*/
     color:#333;
 }
 .fotendp{
