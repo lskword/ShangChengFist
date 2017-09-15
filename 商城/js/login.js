@@ -14,10 +14,10 @@ oP.innerText='';
 		password: oPassword.value
 	}, function(error, responseText) {
 		var json = JSON.parse(responseText);
-		console.log(json.code);
 		if (json.code ===0) {
 			localStorage.token=json.data.token;
 			localStorage.username=json.data.username;
+			oP.innerText ='登录成功，3秒后跳转到主页...';
 			var timer = setInterval(function() {
 				location.href = 'index.html'
 			}, 3000);
