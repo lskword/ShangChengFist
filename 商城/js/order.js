@@ -50,18 +50,30 @@ oOrder.onclick = function(event) {
     event = event || window.event;
     let target = event.target || event.srcElement;
     if (target.className === 'cancel-order') {
-        if (!confirm('确认要取消订单吗?')) {
-            return;
-        }
-        let order_id = target.dataset.id;
-        myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
-            let json = JSON.parse(responseText);
-            if (json.code === 0) {
-                var oli=target.parentNode.parentNode;
-                oli.parentNode.removeChild(oli);
-                alert('订单取消成功');
-            }
-        });
+        // if (!confirm('确认要取消订单吗?')) {
+        //     return;
+        // }
+        var fun2=function () {
+          let order_id = target.dataset.id;
+          myajax.post('http://h6.duchengjiu.top/shop/api_order.php?token='+localStorage.token+'&status=cancel', {order_id}, function(err, responseText) {
+              let json = JSON.parse(responseText);
+              if (json.code === 0) {
+                  var oli=target.parentNode.parentNode;
+                  oli.parentNode.removeChild(oli);
+                  toasts('订单取消成功');
+                  var oPrompt=document.querySelector('#oprompts')
+                  var timesr=setTimeout(function(){
+                    // clearInterval(timesr);
+                    document.body.removeChild(oPrompt);
+                  },1000)
+              }
+          });
+        };
+        var fun1=function () {
+          return;
+        };
+        Prompts('确认要取消订单吗',fun1,fun2)
+
     }
 };
 var oSettelment=document.querySelector('#settlement>button');
@@ -79,3 +91,46 @@ oZfbEit.onclick=function () {
   oWindo.style.display='block';
   oWindos.style.display='none';
 };
+function toasts(str) {
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerText=str;
+}
+function toasts_one(str){
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  // console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerHTML=`
+                    <p>'${str}'</p>
+                    <p>
+                    <button id='see'><a href='hotshop.html'>再去看看</a></button>
+                    <button id='gocart'><a href='cart.html'>前往购物车</a></button>
+                    </p>
+                    `
+};
+ function Prompts(str,fun1,fun2) {
+	// console.log(oPromptBtn);
+  // oPromptBtn=function (){
+	// event=event||window.event;
+	var oPromptDiv=document.createElement('div');
+	document.body.appendChild(oPromptDiv);
+	oPromptDiv.id='oprompts';
+	oPromptDiv.innerHTML=`
+							<p>'${str}'</p>
+							<button id="confirm">确定</button>
+							<button id='cancel'>取消</button>
+								`
+		var oConfirm=document.querySelector('#confirm');
+		var oCancel=document.querySelector('#cancel');
+		oCancel.onclick=function () {
+			document.body.removeChild(oPromptDiv);
+			fun1();
+		}
+		oConfirm.onclick=function () {
+			document.body.removeChild(oPromptDiv);
+			fun2();
+		}
+}

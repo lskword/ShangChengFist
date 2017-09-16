@@ -4,7 +4,7 @@
     "browser"
   ],
   "loadEagerly": [
-    "*.js"
+    "**/*.js"
   ],
   "dontLoad": [
     "node_modules/**"

@@ -44,11 +44,13 @@ oAddressUl.onclick = function(event) {
     var target = event.target || event.srcElement;
     console.log(target.nodeName);
     if (target.className === 'delete') {
-        if (!confirm('确认要删除收货地址吗？')) {
-            return;
-        }
+        toasts('删除地址成功');
+        setTimeout(function () {
+          var oPrompt=document.querySelector('#oprompts');
+          // console.log(oPrompt);
+          document.body.removeChild(oPrompt);
+        },2000);
         var address_id = target.dataset.id;
-        console.log(address_id);
         myajax.get('http://h6.duchengjiu.top/shop/api_useraddress.php',
             {status: 'delete', address_id, token: localStorage.token}, function(error, responseText){
                 var json = JSON.parse(responseText);
@@ -78,7 +80,12 @@ var oOrder = document.querySelector('#order');
 oOrder.onclick = function() {
     var address_id = selected_address_id;
     if (address_id === 0) {
-        alert('请选择一个收货地址');
+        toasts('请选择一个收货地址');
+        setTimeout(function(){
+          var oPrompt=document.querySelector('#oprompts');
+          document.body.removeChild(oPrompt);
+        },2000)
+
         return;
     }
     var total_prices = localStorage.sum;
@@ -86,9 +93,23 @@ oOrder.onclick = function() {
         var json = JSON.parse(responseText);
         console.log(json);
         if (json.code === 0) {
-            alert('下订单成功');
-            location.href = 'order.html';
+            toasts('下订单成功');
+            setTimeout(function(){
+              location.href = 'order.html';
+            },2000)
+        }else if(json.code===2002){
+          var fun1=function () {
+            location.href='index.html';
+          }
+          var fun2=function () {
+            location.href='hotshop.html';
+          }
+          var oOrder=document.querySelector('#order');
+
+          Prompts('亲，购物车没有东西哦！',fun1,fun2,oOrder);
+          console.log(oOrder);
         }
+
     });
 
 };
@@ -107,3 +128,27 @@ oAdd.onclick = function() {
         }
     });
 };
+function Prompts(str,fun1,fun2) {
+// var oBtn=document.querySelector('button');
+// oPromptDiv.addEventListener('click',function(event){
+  event=event||window.event;
+  var oPromptDiv=document.createElement('div');
+  document.body.appendChild(oPromptDiv);
+  oPromptDiv.id='oprompts'
+  oPromptDiv.innerHTML=`
+              <p>'${str}'</p>
+              <button id="confirm">去热门商品看看</button>
+              <button id='cancel'>返回首页</button>
+                `
+    var oConfirm=document.querySelector('#confirm');
+    var oCancel=document.querySelector('#cancel');
+    oCancel.onclick=function () {
+      document.body.removeChild(oPromptDiv);
+      fun1();
+    };
+    oConfirm.onclick=function () {
+      document.body.removeChild(oPromptDiv);
+      fun2();
+    };
+  // });
+}

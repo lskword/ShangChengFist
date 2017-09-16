@@ -15,10 +15,7 @@ function animate(elem, targetJSON, time, tweenString, callback) {
   //函数重载，用户传进来的参数数量，类型可能不一样
   //检查数量和类型
   if (
-    arguments.length < 3
-    || typeof arguments[0] != "object"
-    || typeof arguments[1] != "object"
-    || typeof arguments[2] != "number"
+    arguments.length < 3|| typeof arguments[0] != "object"|| typeof arguments[1] != "object"|| typeof arguments[2] != "number"
   ) {
     throw new Error('对不起，你传进来的参数数量不对或者参数类型不对，请仔细检查');
   } else if (arguments.length === 3) {

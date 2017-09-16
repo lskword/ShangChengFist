@@ -56,14 +56,57 @@ myajax.get('http://h6.duchengjiu.top/shop/api_goods.php', {
 	<button id="add-to-cart">
 	<i class="icon-shopping-cart"></i>添加到购物车
 	</button>
-	<button id="add-to-cart1"><a href='order.html' style='color:#fff;'>立即购买</a></button>
+	<button id="add-to-cart1" style='color:#fff;'>立即购买</button>
 	</div>
 </div>
 </div>
 `;
+  var oAddToCart1=document.querySelector('#add-to-cart1');
   var sumnum = document.querySelector(".sumnum");
   var addup = document.querySelector(".addup");
   var adddown = document.querySelector(".adddown");
+  oAddToCart1.onclick=function () {
+      if (!localStorage.token) {
+        toasts('主人要先登录，才能购买哦！');
+        //把当前商品的详细地址存储到localStorage.backurl
+        localStorage.backurl = location.href;
+        //跳转到登录页
+        var timers=setTimeout(function(){
+          location.href = "login.html";
+        },3000);
+        return;
+      }
+      if (nums === 0) {
+        nums = 1;
+      }
+      myajax.post('http://h6.duchengjiu.top/shop/api_cart.php?token=' + localStorage.token, {
+          goods_id: goods_id,
+          number: nums
+        },
+        function(err, responseText) {
+          // var json = JSON.parse(responseText);
+          // console.log(json);
+          // if (json.code === 0) {
+          //   toasts_one('恭喜主人，宝贝已添加到购物车！');
+          // } else if (json.code === 1004) {
+          //   toasts('主人，请登录账户');
+          // } else if (json.code === 1002) {
+          //   toasts('账户过期，请从新登陆');
+          //   setTimeout(function(){
+          //     localStorage.username = '';
+          //     location.reload();
+          //   },3000);
+          // }else if (json.code === 2) {
+  				// 		toasts_one('主人，宝贝已经添加到购物车了！')
+          // }
+          toasts('添加成功！');
+          setTimeout(function () {
+            location.href='order.html';
+          },1000);
+  });
+
+
+  };
   sumnum.value = 1;
   addup.onclick = function() {
     sumnum.value++;
@@ -111,11 +154,13 @@ document.body.onclick = function(event) {
   var target = event.target || event.srcElement;
   if (target.id === 'add-to-cart') {
     if (!localStorage.token) {
-      alert('主人要先登录，才能购买哦！');
+      toasts('主人要先登录，才能购买哦！');
       //把当前商品的详细地址存储到localStorage.backurl
       localStorage.backurl = location.href;
       //跳转到登录页
-      location.href = "login.html";
+      var timers=setTimeout(function(){
+        location.href = "login.html";
+      },3000);
       return;
     }
     if (nums === 0) {
@@ -129,18 +174,38 @@ document.body.onclick = function(event) {
         var json = JSON.parse(responseText);
         console.log(json);
         if (json.code === 0) {
-          alert('恭喜主人，宝贝已添加到购物车！');
+          toasts_one('恭喜主人，宝贝已添加到购物车！');
         } else if (json.code === 1004) {
-          alert('账户过期，请从新登陆');
-          localStorage.username = '';
-          location.reload();
+          toasts('主人，请登录账户');
         } else if (json.code === 1002) {
-          alert('账户过期，请从新登陆');
-          localStorage.username = '';
-          location.reload();
+          toasts('账户过期，请从新登陆');
+          setTimeout(function(){
+            localStorage.username = '';
+            location.reload();
+          },3000);
         }else if (json.code === 2) {
-						alert('主人，宝贝已经添加到购物车了！')
+						toasts_one('主人，宝贝已经添加到购物车了！')
         }
 });
   }
 };
+function toasts(str) {
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerText=str;
+}
+function toasts_one(str){
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  // console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerHTML=`
+                    <p>'${str}'</p>
+                    <p>
+                    <button id='see'><a href='hotshop.html'>再去看看</a></button>
+                    <button id='gocart'><a href='cart.html'>前往购物车</a></button>
+                    </p>
+                    `
+}

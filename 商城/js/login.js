@@ -19,7 +19,11 @@ oP.innerText='';
 			localStorage.username=json.data.username;
 			oP.innerText ='登录成功，3秒后跳转到主页...';
 			var timer = setInterval(function() {
-				location.href = 'index.html'
+				if (localStorage.backurl) {
+					location.href = localStorage.backurl;
+				} else {
+					location.href = 'index.html';
+				}
 			}, 3000);
 		} else {
 			json.message=json.message==='少传参数username'?

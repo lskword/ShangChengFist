@@ -1,29 +1,49 @@
 * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
-#cart-table,#sums {
-	width: 1210px;
-	margin: auto;
+#cart-table, #sums {
+  width: 1210px;
+  margin: auto;
 }
-#sums{
-	text-align:  right;
+
+#sums {
+  text-align: right;
 }
 
 #cart-table>tbody>tr {
-	height: 40px;
-	text-align: center;
-	font-size: 15px;
+  height: 40px;
+  text-align: center;
+  font-size: 15px;
 }
 
 #cart-table>tbody>tr>td {
-	border: 1px solid #c6c6c6;
-
+  border: 1px solid #c6c6c6;
 }
-#cart-table>tbody>tr>td>img{
-	width: 300px;
-	height: 100px;
+
+#cart-table>tbody>tr>td>img {
+  width: 300px;
+  height: 100px;
+}
+
+#oprompts {
+  width: 370px;
+  height: 120px;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* z-index: 3; */
+  border-radius: 30px;
+  text-align: center;
+  line-height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>提示框有确认按钮</title>
+    <style>
+    div {
+      width: 370px;
+      height: 120px;
+      background: rgba(0, 0, 0, .5);
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* z-index: 3; */
+      border-radius: 30px;
+      text-align: center;
+      /*line-height: 60px;*/
+      font-size: 20px;
+      font-weight: 400;
+      color: #fff;
+    }
+    button{
+      width: 100px;
+      height: 30px;
+      border: 0;
+    }
+
+    </style>
+  </head>
+  <body>
+    <button type="button" name="button">点我弹出确认框</button>
+  </body>
+  <script type="text/javascript">
+    Prompts('亲，确认要删除我吗？','fun1','fun2');
+    function Prompts(str) {
+    var oBtn=document.querySelector('button');
+    oBtn.addEventListener('click',function(event){
+      event=event||window.event;
+      var oPromptDiv=document.createElement('div');
+      document.body.appendChild(oPromptDiv);
+      oPromptDiv.innerHTML=`
+                  <p>'${str}'</p>
+                  <button id="confirm">确定</button>
+                  <button id='cancel'>取消</button>
+                    `
+        var oConfirm=document.querySelector('#confirm');
+        var oCancel=document.querySelector('#cancel');
+        oCancel.onclick=function () {
+          document.body.removeChild(oPromptDiv);
+          fun1();
+        }
+        oConfirm.onclick=function () {
+          document.body.removeChild(oPromptDiv);
+          fun2();
+        }
+      });
+    };
+    var fun2=function() {
+      document.body.style.backgroundColor='red';
+    }
+    var fun1=function() {
+      document.body.style.backgroundColor='green';
+    }
+
+
+  </script>
+</html>

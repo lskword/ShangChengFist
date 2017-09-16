@@ -130,3 +130,23 @@ function serializeForm(oForm) {
   }
   return arr;
 }
+function toasts(str) {
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerText=str;
+}
+function toasts_one(str){
+  var oPrompt=document.createElement('div');
+  document.body.appendChild(oPrompt);
+  // console.log(oPrompt);
+  oPrompt.id='oprompts';
+  oPrompt.innerHTML=`
+                    <p>'${str}'</p>
+                    <p>
+                    <button id='see'><a href='hotshop.html'>再去看看</a></button>
+                    <button id='gocart'><a href='cart.html'>前往购物车</a></button>
+                    </p>
+                    `
+}

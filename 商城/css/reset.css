@@ -268,3 +268,41 @@ table img {
     width: 20px;
     height: 30px;
 }
+#oprompts{
+	width: 370px;
+	height: 120px;
+	background:rgba(0,0,0,.5);
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/*z-index: 3;*/
+	position: fixed;
+	border-radius: 30px;
+	text-align: center;
+	line-height: 60px;
+	font-size: 20px;
+	font-weight: 400;
+	color: #fff;
+}
+#oprompts p{
+	width: 370px;
+	height: 70px;
+}
+#oprompts p button{
+	width: 150px;
+	height: 27px;
+	border-radius: 5px;
+	border: 0;
+	background-color: #fd7b7b;
+}
+#oprompts #see{
+	float: left;
+	/*width: 20px*/
+
+}
+#oprompts #gocart{
+	float: right;
+}
